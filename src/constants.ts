@@ -7,11 +7,11 @@ export const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID!
 
 
 export const MAX_WIDTH = '1200px'
-export const baseUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : ''
+export const baseUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://rent-house-three.vercel.app'
 
 export const errorDescriptions = {
     OAuthSignin: "authorization url failed",
-    OAuthCallback: "authorization faled",
+    OAuthCallback: "authorization failed",
     OAuthCreateAccount: "database error",
     EmailCreateAccount: "Could not create email provider user in the database.",
     Callback: "error ocuured",
