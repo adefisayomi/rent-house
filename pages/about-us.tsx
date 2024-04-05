@@ -59,7 +59,7 @@ export default function AboutUs () {
                   className='w-full max-w-[600px] object-cover '
                 />
               <div className="flex flex-col gap-4 text-black max-w-lg">
-                <h2 className="scroll-m-20 pb-2 text-9xl font-semibold tracking-tight first:mt-0 ">
+                <h2 className="scroll-m-20 pb-2 md:text-9xl text-[82px] font-semibold tracking-tight first:mt-0 ">
                   Our Mission
                 </h2>
                 <p>{"Our mission at Rent-House is simple: to revolutionize the renting experience in Lagos. We strive to empower tenants by offering a wide range of verified properties, transparent pricing, and exceptional customer service. Our goal is to make renting hassle-free, transparent, and rewarding for everyone involved."}</p>
