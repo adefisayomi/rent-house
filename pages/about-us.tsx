@@ -10,7 +10,7 @@ export default function AboutUs () {
   return (
     <Page title="About-Us">
       <div className="bg-primary w-full min-h-screen py-10">
-          <div className="w-full max-w-9xl mx-auto overflow-hidden">
+          <div className="w-full max-w-9xl mx-auto overflow-hidden p-4 md:p-2">
             <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-black capitalize mb-10">
               What we represent
             </h1>
@@ -50,7 +50,7 @@ export default function AboutUs () {
 
             </div>
 
-            <div className="mt-20 flex flex-col-reverse md:flex-row justify-center items-center gap-10">
+            <div className="mt-20 flex flex-col-reverse md:flex-row justify-center items-start md:items-center gap-10">
               <Image
                   src='/about-us.png'
                   alt='about-us1'
@@ -59,7 +59,7 @@ export default function AboutUs () {
                   className='w-full max-w-[600px] object-cover '
                 />
               <div className="flex flex-col gap-4 text-black max-w-lg">
-                <h2 className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0 ">
+                <h2 className="scroll-m-20 pb-2 text-9xl font-semibold tracking-tight first:mt-0 ">
                   Our Mission
                 </h2>
                 <p>{"Our mission at Rent-House is simple: to revolutionize the renting experience in Lagos. We strive to empower tenants by offering a wide range of verified properties, transparent pricing, and exceptional customer service. Our goal is to make renting hassle-free, transparent, and rewarding for everyone involved."}</p>
