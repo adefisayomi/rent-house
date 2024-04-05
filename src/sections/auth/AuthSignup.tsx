@@ -35,7 +35,7 @@ export default function AuthSignup () {
         else {
             setAlert(`welcome onboard buddy!`, 'success')
             form.reset()
-            router.back()
+            return router.back()
         }
       }
     

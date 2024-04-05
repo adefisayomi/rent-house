@@ -1,15 +1,20 @@
-import { ReactNode, createContext, memo } from "react";
+import { ReactNode, createContext, useRef, useState } from "react";
+import useLocalStorage from "../hooks/useLocalstorage";
 import { useSession } from "next-auth/react";
 
-type StateContextProps = {
-    user?: any
+
+
+type ContextProps = {
+    user: any;
 }
 
-export const StateContext = createContext({} as StateContextProps)
+export const StateContext = createContext({} as ContextProps)
 
-const GlobalStateProvider = ({children}: {children: ReactNode}) => {
+export default function GlobalStateProvider ({children}: {children: ReactNode}) {
 
     const {data} = useSession()
+    // 
+    
 
     return (
         <StateContext.Provider
@@ -21,5 +26,3 @@ const GlobalStateProvider = ({children}: {children: ReactNode}) => {
         </StateContext.Provider>
     )
 }
-
-export default memo(GlobalStateProvider)

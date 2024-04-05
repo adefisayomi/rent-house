@@ -14,6 +14,11 @@ import {
 } from "@/components/ui/navigation-menu"
 import { useRouter } from "next/router";
 import Routes from "@/src/Routes";
+import UserMenu from "./UserMenu";
+import { DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuPortal, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuSub, DropdownMenuSubTrigger } from "@/components/ui/dropdown-menu";
+import { LogOut, Settings, SunMoon, User } from "lucide-react";
+import { signOut } from "next-auth/react";
+import { ToggleThemeMode } from "@/components/ThemeProvider";
 
 
 
@@ -26,11 +31,7 @@ export default function DesktopHeader () {
             <div className="flex items-center gap-4">
                 <NavMenu />
 
-                <Link href={Routes.login}>
-                    <Button size='sm'>
-                        Login
-                    </Button>
-                </Link>
+                <UserMenu component={<DropDownComponent />}/>
             </div>
         </div>
     )
@@ -107,3 +108,53 @@ export const menuItems = [
     {name: 'listing', url: '/listing'},
     {name: 'about us', url: '/about-us'},
 ]
+
+
+function DropDownComponent () {
+
+  return (
+    <DropdownMenuContent className="w-60">
+          <DropdownMenuLabel>My Account</DropdownMenuLabel>
+          <DropdownMenuSeparator />
+          <DropdownMenuGroup>
+
+            <Link href={'#'}>
+            <DropdownMenuItem>
+              <User className="mr-2 h-4 w-4" />
+              <span>Profile</span>
+              <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+            </DropdownMenuItem>
+            </Link>
+
+            <Link href={'#'}>
+            <DropdownMenuItem>
+              <Settings className="mr-2 h-4 w-4" />
+              <span>Settings</span>
+              <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+            </DropdownMenuItem>
+            </Link>
+            
+          </DropdownMenuGroup>
+          <DropdownMenuSeparator />
+          <DropdownMenuGroup>
+            <DropdownMenuSub>
+              <DropdownMenuSubTrigger>
+                <SunMoon className="mr-2 h-4 w-4" />
+                <span>Theme mode</span>
+              </DropdownMenuSubTrigger>
+              <DropdownMenuPortal>
+                <ToggleThemeMode />
+              </DropdownMenuPortal>
+            </DropdownMenuSub>
+          </DropdownMenuGroup>
+          <DropdownMenuSeparator />
+
+          <DropdownMenuItem onClick={() => signOut({redirect: false})}>
+                <LogOut className="mr-2 h-4 w-4" />
+                <span>Log out</span>
+                <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
+          </DropdownMenuItem>
+
+        </DropdownMenuContent>
+  )
+}
