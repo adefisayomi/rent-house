@@ -41,7 +41,7 @@ export default function Login () {
                     <li className="text-xs capitalize hover:underline " ><Link href='#'>privacy</Link></li>
                 </ul>
 
-                <p className="text-xs capitalize">&copy; 2024 Qweek Inc.</p>
+                <p className="text-xs capitalize">&copy; 2024 Rent-House Inc.</p>
             </footer>
         </div>
         </Page>

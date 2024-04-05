@@ -3,8 +3,8 @@ import { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } from "@/src/constants"
 import NextAuth from "next-auth"
 import type {NextAuthOptions} from 'next-auth'
 import GoogleProvider from "next-auth/providers/google"
-import clientPromise from "@/lib/mongodb"
-import { MongoDBAdapter } from "@/lib/MongooseAdapter"
+// import clientPromise from "@/lib/mongodb"
+// import { MongoDBAdapter } from "@/lib/MongooseAdapter"
 import CredentialsProvider from "next-auth/providers/credentials"
 import { createUserWithEmailAndPassword, getUserWithEmailAndPassword } from "@/lib/controllers/user"
 import { NextApiRequest, NextApiResponse } from "next"
@@ -47,7 +47,7 @@ export function nextAuthOptions (req: NextApiRequest, res: NextApiResponse) {
             signIn: Routes.login,
             error: '/api/auth/errors'
         },
-        adapter: MongoDBAdapter(clientPromise),
+        // adapter: MongoDBAdapter(clientPromise),
 
         session: {
             strategy: 'jwt'
