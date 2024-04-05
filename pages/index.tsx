@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Icon } from "@iconify/react";
+import { motion } from "framer-motion";
 
 
 export default function Home () {
@@ -16,7 +17,12 @@ export default function Home () {
         <div className="w-full max-w-9xl flex mx-auto">
           <div className=" w-full h-[85vh]">
             
-            <div className="h-full flex items-start flex-col justify-center gap-2">
+            <motion.div 
+              className="h-full flex items-start flex-col justify-center gap-2"
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
               <h2 className="scroll-m-20 pb-2 text-4xl font-normal capitalize tracking-tight first:mt-0">seamless <span className="font-medium text-primary">rentals,</span></h2>
               <h2 className="scroll-m-20 pb-2 text-4xl font-normal capitalize tracking-tight first:mt-0">skip the  <span className="font-medium text-primary">agents hassles,</span></h2>
 
@@ -33,7 +39,7 @@ export default function Home () {
                   Search
                 </Button>
               </div>
-            </div>
+            </motion.div>
 
             <div className="absolute right-0 bottom-0">
               <Image
