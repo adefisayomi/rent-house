@@ -9,7 +9,7 @@ import { SessionProvider } from "next-auth/react"
 import GlobalStateProvider from "@/src/contexts";
 
 
-const poppins = Poppins({ subsets: ["latin"], weight: ['400', '300', '900'] });
+const poppins = Poppins({ subsets: ["latin"], weight: ['400', '300', '900', '500', '700', '300', '200', '100', '600'] });
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode

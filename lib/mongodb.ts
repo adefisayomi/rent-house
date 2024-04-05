@@ -8,13 +8,13 @@ if (!MONGO_URI) {
 const uri = MONGO_URI;
 const options = {}
 
-let client
-let clientPromise: Promise<MongoClient>
+let client: any
+let clientPromise: any
 
 if (process.env.NODE_ENV === "development") {
   // In development mode, use a global variable so that the value
   // is preserved across module reloads caused by HMR (Hot Module Replacement).
-  if (!global._mongoClientPromise) {
+  if (!global._mongoClientPromise as any) {
     client = new MongoClient(uri, options)
     global._mongoClientPromise = client.connect()
   }
