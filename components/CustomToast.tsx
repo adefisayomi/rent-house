@@ -13,7 +13,7 @@ export default function CustomToast () {
           position="top-right"
           richColors
           closeButton
-          theme={theme}
+          // theme={theme}
           toastOptions={{
             style: {borderRadius: 5, boxShadow: 'none', fontWeight: 300, fontSize: '12px'}
           }}
