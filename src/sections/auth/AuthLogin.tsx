@@ -31,13 +31,13 @@ export default function AuthLogin () {
       })
 
     async function onSubmit(data: yup.InferType<typeof loginFormSchema>) {
-        const res = await signIn('login', {...data, callbackUrl: '/login'})
-        if (res?.error) return setAlert(res.error, 'error')
-        else {
-            setAlert(`welcome back buddy !`, 'success')
-            form.reset()
-            return router.back()
-        }
+        // const res = await signIn('login', {...data, callbackUrl: '/login'})
+        // if (res?.error) return setAlert(res.error, 'error')
+        // else {
+        //     setAlert(`welcome back buddy !`, 'success')
+        //     form.reset()
+        //     return router.back()
+        // }
       }
     
     

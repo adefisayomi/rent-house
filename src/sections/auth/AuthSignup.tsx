@@ -30,13 +30,13 @@ export default function AuthSignup () {
 
     // ---
     async function onSubmit(data: yup.InferType<typeof signupFormSchema>) {
-        const res = await signIn('signup', {...data, redirect: false, callbackUrl: '/signup'})
-        if (res?.error) return setAlert(res.error, 'error')
-        else {
-            setAlert(`welcome onboard buddy!`, 'success')
-            form.reset()
-            return router.back()
-        }
+        // const res = await signIn('signup', {...data, redirect: false, callbackUrl: '/signup'})
+        // if (res?.error) return setAlert(res.error, 'error')
+        // else {
+        //     setAlert(`welcome onboard buddy!`, 'success')
+        //     form.reset()
+        //     return router.back()
+        // }
       }
     
 
