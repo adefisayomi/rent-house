@@ -11,7 +11,7 @@ export default function AboutUs () {
     <Page title="About-Us">
       <div className="bg-primary w-full min-h-screen py-10">
           <div className="w-full max-w-9xl mx-auto overflow-hidden p-4 md:p-2">
-            <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-black capitalize mb-10">
+            <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-7xl text-black capitalize mb-10">
               What we represent
             </h1>
 

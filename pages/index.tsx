@@ -1,11 +1,12 @@
 import Page from "@/components/Page";
-import { ReactNode } from "react";
+import { ReactElement, ReactNode, useEffect } from "react";
 import Layout from "@/src/layout";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
+import ServiceDescription from "@/src/home/ServiceDescription";
 
 
 export default function Home () {
@@ -13,12 +14,10 @@ export default function Home () {
 
   return (
     <Page title="">
-      <div className="relative">
-        <div className="w-full max-w-9xl flex mx-auto">
-          <div className=" w-full h-[85vh]">
-            
+      <div className="">
+        <div className="w-full  flex mx-auto flex-col relative h-[88vh]">
             <motion.div 
-              className="h-full flex items-start flex-col justify-center gap-2"
+              className="h-full flex items-start flex-col justify-center gap-2  w-full max-w-9xl mx-auto"
               initial={{ x: -100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5 }}
@@ -31,7 +30,7 @@ export default function Home () {
               </p>
 
               <div className="w-full max-w-lg border-2 border-stone-400 rounded-lg p-2 h-20 mt-14 flex items-center gap-2">
-                <div className="flex items-end w-full">
+                <div className="flex items-start w-full">
                     <Icon icon="mdi:house-search" className="w-9 h-9 text-stone-400"/>
                     <Input placeholder="Search by city, address or state " className="border-none focus-visible:ring-0" />
                 </div>
@@ -50,9 +49,10 @@ export default function Home () {
                 objectFit="cover"
               />
             </div>
-          </div>
+        </div>
 
-          
+        <div className="w-full">
+          <ServiceDescription />    
         </div>
       </div>
     </Page>
@@ -60,3 +60,5 @@ export default function Home () {
 }
 
 Home.getLayout = (page: ReactNode) => <Layout>{page}</Layout>
+
+
