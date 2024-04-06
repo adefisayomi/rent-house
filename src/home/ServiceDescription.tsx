@@ -11,7 +11,7 @@ export default function ServiceDescription () {
             </h1>
             <p className="text-center max-w-4xl pb-10 text-black">{" Welcome to RentHouse, your premier choice for seamless renting experiences in Nigeria. At RentHouse, we've curated a comprehensive suite of services tailored to ensure hassle-free renting. Our commitment to customer satisfaction underscores every interaction, making choosing us synonymous with convenience, reliability, and unparalleled peace of mind. Whether you're a seasoned renter or new to the process, RentHouse is your ultimate destination for stress-free living in Nigeria."}</p>
 
-            <div className="grid grid-cols-4 gap-6 ">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 ">
                 {
                     _services.map((service, index) => (
                         <ListComponent service={service} key={index} />
@@ -31,7 +31,7 @@ function ListComponent ({service}: ServiceProps) {
     const {icon, header, description} = service
 
     return (
-      <div className="w-full rounded-none bg-black flex py-10 flex-col items-center gap-6 max-w-[280px] cursor-pointer justify-between">
+      <div className="w-full rounded-2xl bg-black flex py-10 flex-col items-center gap-6 md:max-w-[280px] aspect-square md:aspect-auto cursor-pointer justify-between">
         <div>{icon}</div>
         <div className="flex justify-center flex-col items-center">
         {
