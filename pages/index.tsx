@@ -26,7 +26,7 @@ export default function Home () {
               <h2 className="scroll-m-20 pb-2 text-4xl font-normal capitalize tracking-tight first:mt-0">skip the  <span className="font-medium text-primary">agents hassles,</span></h2>
 
               <p className="text-sm max-w-xl">
-              Welcome to the future of hassle-free living in Lagos! Our mission is to redefine the way you rent, putting you in control of your housing journey without the unnecessary headaches. Experience the true essence of Lagos living, minus the traditional agent wahala.
+              Welcome to the future of hassle-free living in Nigeria! Our mission is to redefine the way you rent, putting you in control of your housing journey without the unnecessary headaches. Experience the true essence of Lagos living, minus the traditional agent wahala.
               </p>
 
               <div className="w-full max-w-lg border-2 border-stone-400 rounded-lg p-2 h-20 mt-14 flex items-center gap-2">
