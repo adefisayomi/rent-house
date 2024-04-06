@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import Header from "./header";
 import AnimateRoute from "@/components/AnimateRoute";
+import Footer from "./footer";
 
 
 
@@ -17,6 +18,8 @@ export default function Layout ({children, disableFooter, disableHeader}: Layout
 
             <AnimateRoute>
                 <div>{children}</div>
+
+                {!disableFooter && <footer><Footer /></footer>}
             </AnimateRoute>
         </div>
     )

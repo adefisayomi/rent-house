@@ -1,5 +1,6 @@
 import { ReactElement } from "react";
 import { Icon } from "@iconify/react";
+import { useRouter } from "next/router";
 
 
 export default function ServiceDescription () {
@@ -29,9 +30,10 @@ type ServiceProps = {
 }
 function ListComponent ({service}: ServiceProps) {
     const {icon, header, description} = service
+    const router =useRouter()
 
     return (
-      <div className="w-full rounded-2xl bg-black flex py-10 flex-col items-center gap-6 md:max-w-[280px] aspect-square md:aspect-auto cursor-pointer justify-between">
+      <div onClick={() => router.push(`/services/${header.split(' ').join('-')}`)} className="w-full rounded-2xl bg-black flex py-10 flex-col items-center gap-6 md:max-w-[280px] aspect-square md:aspect-auto cursor-pointer justify-between">
         <div>{icon}</div>
         <div className="flex justify-center flex-col items-center">
         {
