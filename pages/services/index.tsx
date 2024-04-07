@@ -31,12 +31,12 @@ export default function Services () {
                     </div>
                 </div>
 
-                <div className="w-full max-w-9xl mx-auto flex flex-col items-center text-black py-10">
+                <div className="w-full max-w-9xl mx-auto flex flex-col items-center text-black px-2 py-10">
                     <p className="text-lg text-center max-w-6xl">
                         Welcome to RentHouse, your premier destination for hassle-free renting in Lagos. At RentHouse, we offer a comprehensive range of services designed to make your renting experience seamless, convenient, and enjoyable. 
                     </p>
 
-                    <div className="w-full max-w-9xl grid grid-cols-2 gap-16 mx-auto pt-20">
+                    <div className="w-full max-w-9xl grid grid-cols-1 md:grid-cols-2 md:gap-16 gap-10 mx-auto pt-20 px-2 md:px-0">
                         {
                             _services.map((service, index) => (
                                 <ServiceComponent key={index} service={service} />
@@ -63,23 +63,23 @@ type ServiceProps = {
 function ServiceComponent ({service}: ServiceProps) {
     const router = useRouter()
     return (
-        <div className="w-full flex items-center gap-4 border p-6 rounded-xl ">
-            <div className="flex flex-col items-end gap-4 max-w-[300px]">
-                <div className="flex justify-center flex-col items-end">
+        <div className="w-full flex flex-col md:flex-row items-center gap-4 border p-2 md:p-6 rounded-xl py-4 md:py-2">
+            <div className="flex flex-col md:items-end items-start gap-4 md:max-w-[300px]">
+                <div className="flex justify-center flex-col md:items-end items-start">
                     {
                     service.header.split(" ").map((_, index) => (
                         <h2 key={index} className="scroll-m-20 text-xl font-bold tracking-tight first:mt-0 capitalize leading-normal">{_}</h2>
                     ))
                     }
                 </div>
-                <p className="text-sm text-right">{service.description}</p>
+                <p className="text-sm text-left md:text-right">{service.description}</p>
 
                 <Button onClick={() => router.push(`/services/${service.header.split(' ').join('-').toLowerCase()}`)} className="rounded-full bg-black text-white hover:bg-black hover:text-primary " size={'sm'}>
                     Learn More
                 </Button>
             </div>
             <div className="w-fit h-fit overflow-hidden rounded-xl">
-            <img src={service.image} alt={service.header} className="w-full flex object-cover max-w-[350px] aspect-square rounded-xl h-full transform transition duration-300 hover:scale-110" />
+            <img src={service.image} alt={service.header} className="w-full flex object-cover md:max-w-[350px] aspect-square rounded-xl h-full transform transition duration-300 hover:scale-110" />
             </div>
         </div>
     )
