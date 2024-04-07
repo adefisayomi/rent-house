@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 
 export function FooterNewsLetter () {
     return (
-        <div className="p-2 bg-primary rounded-3xl w-full max-w-6xl text-black py-4 flex flex-col items-center gap-4">
+        <div className="p-2 bg-primary rounded-3xl w-full max-w-6xl text-black py-10 flex flex-col items-center gap-4">
             <h2 className="scroll-m-20 capitalize text-3xl font-bold tracking-tight first:mt-0 text-center">Looking for a hassle free house to rent in nigeria?</h2>
             <p className="text-sm text-center max-w-3xl">Look no further! Subscribe now to receive hassle-free house rental updates straight to your inbox. Let us simplify your search and help you find your dream home effortlessly</p>
 

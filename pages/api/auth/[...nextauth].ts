@@ -8,6 +8,7 @@ import { MongoDBAdapter } from "@/lib/MongooseAdapter"
 import CredentialsProvider from "next-auth/providers/credentials"
 import { createUserWithEmailAndPassword, getUserWithEmailAndPassword } from "@/lib/controllers/user"
 import { NextApiRequest, NextApiResponse } from "next"
+import { errorMessage } from "@/lib/config"
 
 
 
@@ -18,44 +19,54 @@ export function nextAuthOptions (req: NextApiRequest, res: NextApiResponse) {
                 clientId: GOOGLE_CLIENT_ID,
                 clientSecret: GOOGLE_CLIENT_SECRET,
               }),
-            // CredentialsProvider(
-            //     {
-            //     id: 'signup',
-            //     name: 'signup',
-            //     credentials: {email: {type: 'text'}, password: {type: 'password'}, name: {type: 'text'}},
-            //     async authorize(credentials, req) {
-            //         const user = await createUserWithEmailAndPassword({email: credentials?.email, password: credentials?.password, name: credentials?.name})
-            //         if (!user.success) throw new Error(user.message)
-            //         return user.data
-            //     }
-            //   }),
+            CredentialsProvider(
+                {
+                id: 'signup',
+                name: 'signup',
+                type: 'credentials',
+                credentials: {email: {type: 'text'}, password: {type: 'password'}, name: {type: 'text'}},
+                async authorize(credentials, req) {
+                    const user = await createUserWithEmailAndPassword({email: credentials?.email, password: credentials?.password, name: credentials?.name})
+                    if (!user.success) throw new Error(user.message)
+                    return user.data
+                }
+              }),
 
-            //   CredentialsProvider(
-            //     {
-            //     id: 'login',
-            //     name: 'login',
-            //     credentials: {email: {type: 'text'}, password: {type: 'password'}},
-            //     async authorize(credentials, req) {
-            //         const user = await getUserWithEmailAndPassword({email: credentials?.email, password: credentials?.password})
-            //         if (!user.success) throw new Error(user.message)
-            //         return user.data
-            //     }
-            //   }),
+              CredentialsProvider(
+                {
+                id: 'login',
+                name: 'login',
+                type: 'credentials',
+                credentials: {email: {type: 'text'}, password: {type: 'password'}},
+                async authorize(credentials, req) {
+                    const user = await getUserWithEmailAndPassword({email: credentials?.email, password: credentials?.password})
+                    if (!user.success) throw new Error(user.message)
+                    return user.data
+                }
+              }),
         ],
         pages: {
             newUser: Routes.signup,
             signIn: Routes.login,
-            error: '/api/auth/errors'
         },
         adapter: MongoDBAdapter(clientPromise),
 
         session: {
-            // strategy: 'jwt'
+            strategy: 'jwt'
         },
         callbacks: {
-            async signIn({credentials, account}) {
+            async signIn({ user, account, profile, email, credentials }) {
                 return true
-            }
+              },
+            async redirect({ url, baseUrl }) {
+                return baseUrl
+              },
+            async session({ session, user, token }) {
+                return session
+              },
+            async jwt({ token, user, account, profile }) {
+                return token
+              }
         }
     })
 

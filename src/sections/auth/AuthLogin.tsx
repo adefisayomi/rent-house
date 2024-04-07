@@ -31,7 +31,9 @@ export default function AuthLogin () {
       })
 
     async function onSubmit(data: yup.InferType<typeof loginFormSchema>) {
-        // const res = await signIn('login', {...data, callbackUrl: '/login'})
+        const res = await signIn('login', {...data, callbackUrl: '/login'})
+        console.log(res)
+        return 
         // if (res?.error) return setAlert(res.error, 'error')
         // else {
         //     setAlert(`welcome back buddy !`, 'success')

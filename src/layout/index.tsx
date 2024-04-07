@@ -13,8 +13,8 @@ type LayoutProps = {
 export default function Layout ({children, disableFooter, disableHeader}: LayoutProps) {
 
     return (
-        <div className="relative w-full min-h-screen h-full">
-            {!disableHeader && <header className="w-full bg-background z-10 overflow-y-hidden sticky top-0 left-0">{<Header />}</header> }
+        <div className="relative w-full min-h-screen">
+            {!disableHeader && <header className="w-full bg-background z-10 sticky top-0 left-0">{<Header />}</header> }
 
             <AnimateRoute>
                 <div>{children}</div>

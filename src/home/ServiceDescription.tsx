@@ -48,7 +48,7 @@ function ListComponent ({service}: ServiceProps) {
   }
   
 
-  const _services = [
+  export const _services = [
     {header: 'verified properties', icon: <Icon icon="icon-park-solid:success" className="w-10 h-10"/>, description: 'Explore a diverse selection of verified properties, meticulously curated to meet your specific needs and preferences. From cozy apartments to spacious family homes, we have the perfect rental waiting for you.'},
     {header: 'Property Management System', icon: <Icon icon="icon-park-outline:spanner" className="w-10 h-10"/>, description: 'Experience unparalleled convenience with our advanced property management system. Streamline rent payments, maintenance requests, and communication with landlords—all in one centralized platform.'},
     {header: 'Legal Assistance', icon: <Icon icon="mdi:legal" className="w-10 h-10"/>, description: 'Experience unparalleled convenience with our advanced property management system. Streamline rent payments, maintenance requests, and communication with landlords—all in one centralized platform.'},
