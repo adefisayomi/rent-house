@@ -104,7 +104,14 @@ export function NavMenu() {
 
 
         <NavigationMenuItem>
-          <NavigationMenuTrigger className={`${navigationMenuTriggerStyle()} text-xs capitalize rounded-none pb-0`}>services</NavigationMenuTrigger>
+        <div className="flex flex-col gap-0 items-center">
+          <Link href='/services'>
+            <NavigationMenuTrigger className={`${navigationMenuTriggerStyle()} text-xs capitalize rounded-none pb-0`}>
+              services
+            </NavigationMenuTrigger>
+          </Link>
+          {routeName === 'services' && <span className="w-full bg-primary h-[2px] max-w-[70%]"/>}
+        </div>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
               {_services.map((service, index) => (
