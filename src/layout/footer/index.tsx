@@ -5,11 +5,11 @@ import Link from "next/link";
 
 
 
-export default function Footer () {
+export default function Footer ({disableNewsletter}: {disableNewsletter?: boolean}) {
 
     return (
         <div className="w-full bg-white p-2 flex flex-col items-center gap-4 pb-8 pt-20">
-            <FooterNewsLetter />
+            {!disableNewsletter && <FooterNewsLetter />}
 
             <div className="flex items-start md:flex-row flex-col justify-between gap-4 max-w-6xl w-full mt-10">
                 <div className="flex flex-col items-start text-black border-t border-slate-300 w-full p-2 md:border-none  md:w-fit">

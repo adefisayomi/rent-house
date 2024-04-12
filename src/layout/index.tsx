@@ -8,9 +8,10 @@ import Footer from "./footer";
 type LayoutProps = {
     disableHeader?: boolean;
     disableFooter?: boolean;
-    children: ReactNode
+    children: ReactNode;
+    disableNewsletter?: boolean;
 }
-export default function Layout ({children, disableFooter, disableHeader}: LayoutProps) {
+export default function Layout ({children, disableFooter, disableHeader, disableNewsletter}: LayoutProps) {
 
     return (
         <div className="relative w-full min-h-screen">
@@ -19,7 +20,7 @@ export default function Layout ({children, disableFooter, disableHeader}: Layout
             <AnimateRoute>
                 <div>{children}</div>
 
-                {!disableFooter && <footer><Footer /></footer>}
+                {!disableFooter && <footer><Footer disableNewsletter={disableNewsletter} /></footer>}
             </AnimateRoute>
         </div>
     )
